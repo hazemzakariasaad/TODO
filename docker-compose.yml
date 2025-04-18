@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    restart: unless-stopped
+    environment:
+      # This will create the DB named “todoapp” on first startup
+      MONGO_INITDB_DATABASE: todoapp
+      #  root user/pass 
+      # MONGO_INITDB_ROOT_USERNAME: admin
+      # MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
+
+  # backend:
+  #   build: .
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - mongodb
+  #   environment:
+  #     # Since both services share a Docker network,
+  #     # “mongodb” is resolvable as the MongoDB host:
+  #     MONGO_URI: mongodb://localhost:27017/todoapp
+  #     # If you set up auth:
+  #     # MONGO_URI: mongodb://admin:secret@mongodb:27017/todoapp?authSource=admin
+  #   ports:
+  #     - "3000:3000"
