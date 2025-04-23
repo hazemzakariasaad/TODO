@@ -7,13 +7,19 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    /* ✅ Fix: Use node resolution instead of bundler */
+    "moduleResolution": "node",
+
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
+
+    /* ✅ JSX setting for React 18+ */
     "jsx": "react-jsx",
+
+    /* ✅ Add type definitions for JSX support */
+    "types": ["react", "react-dom"],
 
     /* Linting */
     "strict": true,
