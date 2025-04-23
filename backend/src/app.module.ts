@@ -19,7 +19,9 @@ import { AuthModule }            from './auth/auth.module';
       imports:    [ConfigModule],
       inject:     [ConfigService],
       useFactory: (cs: ConfigService) => {
-        const uri = cs.get<string>('MONGODB_URI');
+        // const uri = cs.get<string>('MONGODB_URI');
+        const uri = 'mongodb+srv://zhazem390:hazem1066@cluster0.270cnrv.mongodb.net/mydb?retryWrites=true&w=majority';
+
         if (!uri) {
           throw new Error('MONGODB_URI must be defined');
         }
