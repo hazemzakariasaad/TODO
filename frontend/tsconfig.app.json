@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "types": ["react", "react-dom"],
+
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "noEmit": true,
